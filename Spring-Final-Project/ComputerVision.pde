@@ -1,8 +1,3 @@
-// Learning Processing
-// Daniel Shiffman
-// http://www.learningprocessing.com
-
-// Example 16-11: Simple color tracking
 
 import processing.video.*;
 
@@ -17,11 +12,10 @@ void setup() {
   video = new Capture(this, width, height);
   video.start();
   // Start off tracking for red
-  trackColor = color(255, 255, 255);
+  trackColor = color(0, 255, 0);
 }
 
 void captureEvent(Capture video) {
-  // Read image from the camera
   video.read();
 }
 
@@ -60,6 +54,12 @@ void draw() {
         closestY = y;
       }
     }
+    noFill();
+    rect(width/3, height/3, width/3, height/3);
+    line(0,0,width/3,height/3);
+    line(0,height,width/3, 2*height/3);
+    line(width,0,2*width/3, height/3);
+    line(width,height, 2*width/3, 2*height/3);
   }
 
   // We only consider the color found if its color distance is less than 10. 

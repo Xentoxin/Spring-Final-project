@@ -1,0 +1,63 @@
+public class Ball{
+    private double radius;
+    private double xvel;
+    private double yvel;
+    private double zvel;
+    private double xcoor;
+    private double ycoor;
+    private double zcoor;
+    public Ball(double d, double x, double y, double z){
+	radius = 10;
+	xcoor = 0;
+	ycoor = 0;
+	zcoor = d;
+	xvel = x;
+	yvel = y;
+	zvel = z;
+    }
+    public double xmove(){
+	if(xcoor >= 500){
+	    xvel = -xvel;
+	}
+	else if(xcoor <= -500){
+	    xvel = -xvel;
+	}
+  xcoor +=xvel;
+	return xcoor;
+    }
+    public double ymove(){
+	if(ycoor >= 500){
+	    yvel = -yvel;
+	}
+	else if(ycoor <= -500){
+	    yvel = -yvel;
+	}
+  ycoor +=yvel;
+	return ycoor;
+    }
+    public double zmove(){
+	zcoor +=zvel;
+	if(zcoor >= 5){
+	    zvel = -zvel;
+	}
+	else if(zcoor <= 1){
+	    zvel = -zvel;
+	}
+	return zcoor;
+    }
+    public double scale(double n){
+	return n/zcoor;
+    }
+    public double rad(){
+	return radius;
+    }
+    public double xc(){
+      return xcoor;
+    }
+    public double yc(){
+      return ycoor;
+    }
+    public double zc(){
+      return zcoor;
+    }
+}

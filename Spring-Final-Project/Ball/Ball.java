@@ -1,60 +1,63 @@
 public class Ball{
-    private int radius;
-    private int xvel;
-    private int yvel;
-    private int zvel;
-    private int xcoor;
-    private int ycoor;
-    private int zcoor;
-    public Ball(int d, int x, int y, int z){
-	radius = 10;
-	xcoor = 0;
-	ycoor = 0;
-	zcoor = d;
-	xvel = x;
-	yvel = y;
-	zvel = z;
+    private float radius;
+    private float xvel;
+    private float yvel;
+    private float zvel;
+    private float xcoor;
+    private float ycoor;
+    private float zcoor;
+    public Ball(float d, float x, float y, float z){
+  radius = 5;
+  xcoor = 0;
+  ycoor = 0;
+  zcoor = d;
+  xvel = x;
+  yvel = y;
+  zvel = z;
     }
-    public int xmove(){
-	xcoor +=xvel;
-	if(xcoor > 1000){
-	    xcoor = 2000 - xcoor;
-	    xvel = -xvel;
-	}
-	else if(xcoor < -1000){
-	    xcoor = -2000 -xcoor;
-	    xvel = -xvel;
-	}
-	return xcoor;
+    public float xmove(){
+  if(xcoor >= 500){
+      xvel = -xvel;
+  }
+  else if(xcoor <= -500){
+      xvel = -xvel;
+  }
+  xcoor +=xvel;
+  return xcoor;
     }
-    public int ymove(){
-	ycoor +=yvel;
-	if(ycoor > 1000){
-	    ycoor = 2000 - ycoor;
-	    yvel = -yvel;
-	}
-	else if(ycoor < -1000){
-	    ycoor = -2000 -ycoor;
-	    yvel = -yvel;
-	}
-	return ycoor;
+    public float ymove(){
+  if(ycoor >= 500){
+      yvel = -yvel;
+  }
+  else if(ycoor <= -500){
+      yvel = -yvel;
+  }
+  ycoor +=yvel;
+  return ycoor;
     }
-    public int zmove(){
-	zcoor +=zvel;
-	if(zcoor > 1000){
-	    zcoor = 2000 - zcoor;
-	    zvel = -zvel;
-	}
-	else if(zcoor < -1000){
-	    zcoor = -2000 -zcoor;
-	    zvel = -zvel;
-	}
-	return zcoor;
+    public float zmove(){
+  if(zcoor >= 10){
+      zvel = -zvel;
+  }
+  else if(zcoor <= 1){
+      zvel = -zvel;
+  }
+  zcoor +=zvel;
+  return zcoor;
     }
-    public int scale(int n){
-	return n/zcoor;
+    public float scale(float n){
+  return n/zcoor;
     }
-    public int rad(){
-	return radius;
+    public float rad(){
+  return radius;
+    }
+    public float xc(){
+      return xcoor;
+    }
+    public float yc(){
+      return ycoor;
+    }
+    public float zc(){
+      return zcoor;
     }
 }

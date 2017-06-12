@@ -1,8 +1,10 @@
+import processing.sound.*;
 Ball bbb;
 boolean a;
 int time;
 int side;
 int score;
+SoundFile boop;
 void setup(){
   if(random(2) <= 1){
     side = -1;
@@ -15,6 +17,7 @@ void setup(){
   bbb = new Ball(2.5,(2-random(2))*random(10),(2-random(2))*random(10),side* 0.07);
   a = true;
   score = 0;
+  boop = new SoundFile(this, "boop.mp3");
 }
 void draw(){
   if(a){
@@ -36,6 +39,7 @@ void draw(){
       if(sqrt(sq(bbb.xc()+width/2-mouseX )+sq(bbb.yc()+height/2-mouseY)) < 150){
         bbb.zmove();
         score += 1;
+       boop.play();
       }
       else{
         a=false;

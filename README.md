@@ -1,14 +1,7 @@
-Hao Yu Chn / Alvin Chen
+Hao Yu Chen / Alvin Chen
 Konstantinovich Period 9 Spring Final Project
 First Person Pong
-In this program, we simulate what it would be like to play bot against an AI. That is the end goal. 
-So what did we do?
-  We take input from the camera whilst adding a overlay to the input to make it look like a corridor. The back of the corridor (the back wall) is the opponent.
-  The ball bounces off the side walls and back wall and the front wall.
-  This is pseudo 3-d but not really. 
-  We want the image to essentially look like a ball bouncing within the box.
-  
-  Then we wanted a paddle for the player to hit the ball with. Simple. WE used the video from the camera and used color tracking. WE hold a a piece
-  of paper a certain color. The program tracks that color and recognizes thaat as the paddle and the ball only bounces off that paddle when it's heading
-  towards the player. It's somwewhat overpowered because the player can just put the paper "paddle" super close to the camera and suddenly the entire screen
-  is the player's paddle leaving no room for the player to miss the pong ball. 
+  Our final project is a first person take on the original pong game. In this program you look down a corridor. The ball bounces around the corridor from the middle to the front wall (you) back to the back wall. To hit the ball, left click the mouse to summon a paddle. Everytime you hit the ball with the paddle you gain a point which is shown on the top left corner. A sound is also played everytime you hit the ball. The ball gradually accelerates in speed. There is no end. But once you miss the ball, then it just restarts from the center. Everything resets including the score and ball speed. 
+
+
+Instructions: Start the program. Left click to create paddle to deflect the ball. Keep going for as long as possible.

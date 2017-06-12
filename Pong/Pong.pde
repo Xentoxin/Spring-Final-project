@@ -4,6 +4,7 @@ boolean a;
 int time;
 int side;
 int score;
+int s = 5;
 SoundFile boop;
 void setup(){
   if(random(2) <= 1){
@@ -20,6 +21,13 @@ void setup(){
   boop = new SoundFile(this, "boop.mp3");
 }
 void draw(){
+ if(s > 0){
+    fill(255);
+    textSize(100);
+    delay(1000);
+    text(s,width/2, height/2);
+    s = s - 1;}
+else{
   if(a){
   background(255);
   line(0,480,width/2,height/2);
@@ -93,4 +101,6 @@ void draw(){
   }
   textSize(32);
 text(score, 50, 40); 
+
+}
 }

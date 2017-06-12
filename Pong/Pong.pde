@@ -22,11 +22,11 @@ void setup(){
 }
 void draw(){
  if(s > 0){
-    fill(255);
     textSize(100);
-    delay(1000);
+    delay(1000);  
     text(s,width/2, height/2);
-    s = s - 1;}
+    s = s - 1;
+}
 else{
   if(a){
   background(255);
@@ -101,6 +101,12 @@ else{
   }
   textSize(32);
 text(score, 50, 40); 
-
+if(score == 5){
+  background(255);
+  textSize(100);
+  fill(random(255));
+  textAlign(CENTER);
+  text("You Win" , width/2, height/2);
+}
 }
 }
